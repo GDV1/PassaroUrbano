@@ -1,5 +1,7 @@
 import { Oferta } from './shared/oferta.model';
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class OfertasService {
 
     public ofertas: Oferta[] = [
