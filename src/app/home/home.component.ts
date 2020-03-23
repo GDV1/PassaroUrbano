@@ -15,7 +15,6 @@ export class HomeComponent implements OnInit {
   constructor( private ofertasService: OfertasService ) { }
 
   ngOnInit() {
-
     this.ofertasService.getOfertas()
     .then((ofertas: Oferta[]) => {
       this.ofertas = ofertas;
@@ -24,5 +23,4 @@ export class HomeComponent implements OnInit {
       console.log(param);
     });
   }
-
 }
