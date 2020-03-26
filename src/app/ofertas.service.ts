@@ -7,6 +7,7 @@ import { Oferta } from './shared/oferta.model';
 export class OfertasService {
 
     private url_api = 'http://localhost:3000/ofertas?';
+    private url_api2 = 'http://localhost:3000/como-usar?';
 
     constructor(private http: HttpClient) {}
 
@@ -27,6 +28,15 @@ export class OfertasService {
         .toPromise()
         .then((resposta: any) => {
             return resposta.shift();
+        });
+    }
+
+    public getComoUsarOfertaPorId(id: number): Promise<string> {
+        return this.http.get(`${this.url_api2}id=${id}`)
+        .toPromise()
+        .then((resposta: any) => {
+            console.log(resposta.json());
+            return resposta.json()[0].descricao;
         });
     }
 }
