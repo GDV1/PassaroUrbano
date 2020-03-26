@@ -2,41 +2,42 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { Oferta } from './shared/oferta.model';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class OfertasService {
 
-    private url_api = 'http://localhost:3000/ofertas?';
-    private url_api2 = 'http://localhost:3000/como-usar?';
+    private readonly urlBase = 'http://localhost:3000/';
 
     constructor(private http: HttpClient) {}
 
-    public getOfertas(): Promise<Oferta[]> {
-        return this.http.get(`${this.url_api}destaque=true`)
-        .toPromise()
-        .then((resposta: any) => resposta);
+    // Página Home
+    OfertasDestaque() {
+        const destaque = `${this.urlBase}ofertas?destaque=true`;
+        return this.http.get<Oferta[]>(destaque);
     }
 
-    public getOfertasPorCategoria(categoria: string): Promise<Oferta[]> {
-        return this.http.get(`${this.url_api}categoria=${categoria}`)
-        .toPromise()
-        .then((resposta: any) => resposta);
+    // Página Restaurantes e Diversão - Consulta por categoria
+    OfertasPorCategoria(categoria: string) {
+        const ofertaPorCategoria = `${this.urlBase}ofertas?categoria=${categoria}`;
+        return this.http.get<Oferta[]>(ofertaPorCategoria);
     }
 
-    public getOfertaPorId(id: number): Promise<Oferta> {
-        return this.http.get(`${this.url_api}categoria=${id}`)
-        .toPromise()
-        .then((resposta: any) => {
-            return resposta.shift();
-        });
+    // Página da Oferta
+    OfertasPorId(id: number) {
+        const ofertaPorId = `${this.urlBase}ofertas?id=${id}`;
+        return this.http.get<Oferta>(ofertaPorId);
     }
 
-    public getComoUsarOfertaPorId(id: number): Promise<string> {
-        return this.http.get(`${this.url_api2}id=${id}`)
-        .toPromise()
-        .then((resposta: any) => {
-            console.log(resposta.json());
-            return resposta.json()[0].descricao;
-        });
+    // Como Usar da Oferta por Id
+    ComoUsar(id: number) {
+        const detalhesPorId = `${this.urlBase}como-usar?id=${id}`;
+        return this.http.get<string>(detalhesPorId);
+    }
+
+    // Onde Fica da Oferta por Id
+    OndeFica(id: number) {
+        const detalhesPorId = `${this.urlBase}onde-fica?id=${id}`;
+        return this.http.get<string>(detalhesPorId);
     }
 }

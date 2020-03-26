@@ -12,18 +12,20 @@ import { OfertasService } from 'src/app/ofertas.service';
 export class ComoUsarComponent implements OnInit {
 
   public comoUsar: string = '';
-  
+
   constructor(
     private route: ActivatedRoute,
     private ofertasService: OfertasService
   ) { }
 
-  ngOnInit(): void {
-    console.log(this.route.parent.snapshot.params['id']);
-    this.ofertasService.getComoUsarOfertaPorId(this.route.parent.snapshot.params['id'])
-    .then((descricao: string) => {
-      this.comoUsar = descricao;
-    });
+  parametro = this.route.parent.snapshot.params['id'];
+
+  // Alimenta detalhes da oferta
+  obterDetalhesPorId(parametro: number) {
+    this.ofertasService.ComoUsar(parametro)
+    .subscribe((dados: string) => this.comoUsar = dados);
   }
+
+  ngOnInit() { this.obterDetalhesPorId(this.parametro); }
 
 }

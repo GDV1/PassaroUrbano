@@ -1,8 +1,8 @@
 <div class="container">
-  <div class="oferta" *ngIf="oferta !== undefined">
+  <!--div class="oferta">
 
     <div class="row">
-      <div class="col">
+      <div class="col" *ngIf="oferta.descricaoOferta">
         <h4>{{ oferta.descricao_oferta }}</h4>
       </div>
     </div>
@@ -10,7 +10,7 @@
     <div class="row">
       <div class="col-md-6">
         <div class="img_capa">
-          <img [src]="oferta.imagens[0].url" />
+          <img [src]="oferta.imagens[0].url" /> 
         </div>
 
         <div class="thumbnails">
@@ -28,7 +28,7 @@
 
         <div class="row">
           <div class="col text-center">
-            <h1>{{ oferta.valor }}</h1>
+            <h1>{{ oferta?.valor }}</h1>
           </div>
         </div>
 
@@ -37,12 +37,9 @@
             <button type="button" class="btn btn-warning btn-lg">Adicionar ao carrinho</button>
           </div>
         </div>
-          
       </div>
-
     </div>
-
-  </div>
+  </div-->
 
   <div class="row" style="margin-top: 15px; margin-bottom: 150px;">
     <div class="col">

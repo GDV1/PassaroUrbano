@@ -15,10 +15,10 @@ export class RestaurantesComponent implements OnInit {
 
   public ofertas: Oferta[];
 
-  ngOnInit() {
-    this.ofertasService.getOfertasPorCategoria('restaurante')
-    .then((ofertas: Oferta[]) => {
-      this.ofertas = ofertas;
-    });
+  ObterRestaurantes() {
+    this.ofertasService.OfertasPorCategoria('restaurante')
+    .subscribe(dados => this.ofertas = dados);
   }
+
+  ngOnInit() { this.ObterRestaurantes(); }
 }
