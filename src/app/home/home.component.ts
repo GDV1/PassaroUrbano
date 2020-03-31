@@ -18,5 +18,7 @@ export class HomeComponent implements OnInit {
     this.ofertasService.OfertasDestaque().subscribe(dados => this.ofertas = dados);
   }
 
-  ngOnInit() { this.ObterDestaques(); }
+  ngOnInit() {
+    this.ObterDestaques();
+  }
 }

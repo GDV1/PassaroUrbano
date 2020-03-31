@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { OfertasService } from 'src/app/ofertas.service';
+import { detalhesOferta } from 'src/app/shared/detalhesOferta.model';
 
 @Component({
   selector: 'app-onde-fica',
@@ -9,21 +10,22 @@ import { OfertasService } from 'src/app/ofertas.service';
 })
 export class OndeFicaComponent implements OnInit {
 
-  public ondeFica: string = '';
+  public ondeFica: detalhesOferta;
 
   constructor(
     private route: ActivatedRoute,
     private ofertasService: OfertasService
   ) { }
 
-  parametro = this.route.parent.snapshot.params['id'];
+  public parametro = this.route.parent.snapshot.params.id;
 
   // Alimenta detalhes da oferta
-  obterDetalhesPorId(parametro: number) {
-    this.ofertasService.OndeFica(parametro)
-    .subscribe((dados: string) => this.ondeFica = dados);
+  obterDetalhesPorId() {
+    this.ofertasService.OndeFica(this.parametro)
+    .subscribe(dados => this.ondeFica = dados);
   }
 
-  ngOnInit() { this.obterDetalhesPorId(this.parametro); }
-
+  ngOnInit() {
+    this.obterDetalhesPorId();
+  }
 }

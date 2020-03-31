@@ -1,8 +1,7 @@
 <div class="container">
-  <!--div class="oferta">
-
+  <div class="oferta" *ngFor="let oferta of ofertas">
     <div class="row">
-      <div class="col" *ngIf="oferta.descricaoOferta">
+      <div class="col">
         <h4>{{ oferta.descricao_oferta }}</h4>
       </div>
     </div>
@@ -39,7 +38,7 @@
         </div>
       </div>
     </div>
-  </div-->
+  </div>
 
   <div class="row" style="margin-top: 15px; margin-bottom: 150px;">
     <div class="col">
