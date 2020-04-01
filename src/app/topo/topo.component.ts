@@ -23,21 +23,17 @@ export class TopoComponent implements OnInit {
     .debounceTime(1000)
     .distinctUntilChanged()
     .switchMap((termo: string) => {
-      console.log('Requisição HTTP: ', termo);
-
       if (termo.trim() === '') {
         return Observable.of<Oferta[]>([]);
       }
       return this.ofertasService.pesquisaOfertas(termo);
     })
     .catch((erro: any) => {
-      console.log(erro);
       return Observable.of<Oferta[]>([]);
     });
   }
 
   public pesquisa(termoBusca: string): void {
-    console.log('Caractere: ', termoBusca);
     this.subjectPesquisa.next(termoBusca);
   }
 }
