@@ -14,10 +14,7 @@ import '../util/rxjs-extensions';
 export class TopoComponent implements OnInit {
 
   public ofertas: Observable<Oferta[]>;
-  public ofertas2: Oferta[];
-
   private subjectPesquisa: Subject<string> = new Subject<string>();
-
 
   constructor(private ofertasService: OfertasService) { }
 
@@ -37,23 +34,10 @@ export class TopoComponent implements OnInit {
       console.log(erro);
       return Observable.of<Oferta[]>([]);
     });
-
-    this.ofertas.subscribe((ofertas: Oferta[]) => {
-      this.ofertas2 = ofertas;
-    });
   }
 
   public pesquisa(termoBusca: string): void {
-    // this.ofertas = this.ofertasService.pesquisaOfertas(termoBusca);
-
-    // this.ofertas.subscribe(
-    //   (ofertas: Oferta[]) => console.log(ofertas),
-    //   (erro: any) => console.log('Erro', erro.status),
-    //   () => console.log('Fluxo de eventos completo')
-    // );
-
     console.log('Caractere: ', termoBusca);
     this.subjectPesquisa.next(termoBusca);
-
   }
 }
