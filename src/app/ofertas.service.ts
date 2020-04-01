@@ -2,7 +2,11 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Oferta } from './shared/oferta.model';
 import { detalhesOferta } from './shared/detalhesOferta.model';
-import 'rxjs-compat/add/operator/map';
+
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/retry';
+
 
 @Injectable()
 export class OfertasService {
@@ -39,5 +43,12 @@ export class OfertasService {
     OndeFica(id: number) {
         const detalhesPorId = `${this.urlBase}onde-fica?id=${id}`;
         return this.http.get<detalhesOferta>(detalhesPorId);
+    }
+
+    // Pesquisa de Ofertas
+    pesquisaOfertas(termo: string): Observable<Oferta[]> {
+        return this.http.get<Oferta[]>(`${this.urlBase}ofertas?descricao_oferta=${termo}`)
+            .retry(10)
+            .map(resposta => resposta);
     }
 }

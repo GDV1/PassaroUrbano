@@ -1,8 +1,26 @@
 <div>
   <nav class="navbar navbar-light bg-faded">
     <div class="container">
-      <a class="navbar-brand" routerLink=""><img src="/assets/logo.png" /></a>
-      <a a href="#"><img src="/assets/carrinho.png"/></a>
+      <div class="row">
+        <div class="col-4">
+          <a class="navbar-brand" routerLink=""><img src="/assets/logo.png" /></a>
+        </div>
+        <div class="col-6">
+          <input 
+            type="text" 
+            class="form-control" 
+            placeholder="Pesquise por ofertas..."
+            #termoBusca
+            (keyup)="pesquisa(termoBusca.value)"
+            />
+            <ul class="list-group" style="position: absolute;">
+              <li class="list-group-item" *ngFor="let oferta of ofertas2"> {{ oferta.titulo | descricaoReduzida:15 }} </li>
+            </ul>
+        </div>
+        <div class="col-2">
+          <a href="#"><img src="/assets/carrinho.png"/></a>
+        </div>
+      </div>
     </div>
   </nav>
 
