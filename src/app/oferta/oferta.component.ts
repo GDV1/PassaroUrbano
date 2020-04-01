@@ -19,15 +19,14 @@ export class OfertaComponent implements OnInit {
     private ofertasService: OfertasService
   ) { }
 
-  public parametro = this.route.snapshot.params.id;
-
-  // Alimenta a página de oferta
-  obterOferta() {
-    this.ofertasService.OfertasPorId(this.parametro)
-    .subscribe(dados => this.ofertas = dados);
-  }
+  public parametro;
 
   ngOnInit() {
-    this.obterOferta();
+    this.route.params.subscribe((parametros: any) => {
+      this.parametro = parametros.id;
+
+      this.ofertasService.OfertasPorId(this.parametro)
+      .subscribe(dados => this.ofertas = dados);
+    });
   }
 }

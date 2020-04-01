@@ -19,15 +19,15 @@ export class ComoUsarComponent implements OnInit {
     private ofertasService: OfertasService
   ) { }
 
-  public parametro = this.route.parent.snapshot.params.id;
+  public parametro;
 
-  // Alimenta detalhes da oferta
-  obterDetalhesPorId() {
-    this.ofertasService.ComoUsar(this.parametro)
-    .subscribe(dados => this.comoUsar = dados);
-  }
 
   ngOnInit() {
-    this.obterDetalhesPorId();
+    this.route.parent.params.subscribe((parametros: any) => {
+      this.parametro = parametros.id;
+
+      this.ofertasService.ComoUsar(this.parametro)
+      .subscribe(dados => this.comoUsar = dados);
+    });
   }
 }

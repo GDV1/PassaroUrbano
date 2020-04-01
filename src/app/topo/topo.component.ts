@@ -20,7 +20,7 @@ export class TopoComponent implements OnInit {
 
   ngOnInit() {
     this.ofertas = this.subjectPesquisa
-    .debounceTime(1000)
+    .debounceTime(750)
     .distinctUntilChanged()
     .switchMap((termo: string) => {
       if (termo.trim() === '') {
@@ -35,5 +35,9 @@ export class TopoComponent implements OnInit {
 
   public pesquisa(termoBusca: string): void {
     this.subjectPesquisa.next(termoBusca);
+  }
+
+  public limpaPesquisa(): void {
+    this.subjectPesquisa.next('');
   }
 }
