@@ -11,12 +11,12 @@ export class OrdemCompraService {
     constructor(private http: HttpClient) {}
 
 
-    public efetivarCompra(pedido: Pedido): Observable<any> {
+    public efetivarCompra(pedido: Pedido): Observable<number> {
 
         return this.http.post(
             `${this.urlApi}pedidos`,
             JSON.stringify(pedido),
             {headers: { 'Content-type' : 'application/json' }},
-        );
+        ).map((resposta: Pedido) => resposta.id);
     }
 }

@@ -192,6 +192,55 @@
       "complemento": "Casa A",
       "formaPagamento": "dinheiro",
       "id": 1
+    },
+    {
+      "endereco": "Rua S",
+      "numero": "10",
+      "complemento": "Casa E",
+      "formaPagamento": "dinheiro",
+      "id": 2
+    },
+    {
+      "endereco": "Rua E",
+      "numero": "1",
+      "complemento": "Casa V",
+      "formaPagamento": "debito",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "endereco": "Rua Sirios",
+      "numero": "15",
+      "complemento": "Casa 4",
+      "formaPagamento": "dinheiro"
+    },
+    {
+      "id": 5,
+      "endereco": "Avenida Mangalo",
+      "numero": "145",
+      "complemento": "Quadra 150",
+      "formaPagamento": "debito"
+    },
+    {
+      "id": 6,
+      "endereco": "Rua Sirios",
+      "numero": "14",
+      "complemento": "156",
+      "formaPagamento": "dinheiro"
+    },
+    {
+      "endereco": "Rua Faveira",
+      "numero": "14",
+      "complemento": "Quadra 153",
+      "formaPagamento": "dinheiro",
+      "id": 7
+    },
+    {
+      "endereco": "Rua Crepusculo",
+      "numero": "85",
+      "complemento": "Quadra 8",
+      "formaPagamento": "dinheiro",
+      "id": 8
     }
   ]
 }

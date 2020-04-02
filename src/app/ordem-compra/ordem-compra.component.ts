@@ -32,7 +32,8 @@ export class OrdemCompraComponent implements OnInit {
   public formEstado = 'disabled';
 
   // Atributo para controle do Pedido
-  public pedido: Pedido = new Pedido('', '', '', '');
+  public pedido: Pedido = new Pedido(undefined, '', '', '', '');
+  public idPedidoCompra: number;
 
   constructor(private ordemCompraService: OrdemCompraService) { }
 
@@ -109,6 +110,8 @@ export class OrdemCompraComponent implements OnInit {
     this.pedido.formaPagamento = this.formaPagamento;
 
     this.ordemCompraService.efetivarCompra(this.pedido)
-      .subscribe();
+      .subscribe((idPedido: number) => {
+        this.idPedidoCompra = idPedido;
+      });
   }
 }
