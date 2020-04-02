@@ -7,11 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrdemCompraComponent implements OnInit {
 
+  // Atributos para recuperação dos valores inseridos no formulário
   public endereco = '';
   public numero = '';
   public complemento = '';
   public formaPagamento = '';
 
+  // Atributos para validação do formulário
+  public enderecoValido;
+  public numeroValido;
+  public complementoValido;
+  public formaPagamentoValido;
+
+  // Atributos para estados primitivos dos campos (pristine)
+  public enderecoPrimitivo = true;
+  public numeroPrimitivo = true;
+  public complementoPrimitivo = true;
+  public pagamentoPrimitivo = true;
+
+  // Controla o botão de confirmação da compra
+  public formEstado = 'disabled'
   constructor() { }
 
   ngOnInit(): void {
@@ -19,21 +34,65 @@ export class OrdemCompraComponent implements OnInit {
 
   public atualizaEndereco(endereco: string): void {
     this.endereco = endereco;
-    console.log(this.endereco);
+
+    this.enderecoPrimitivo = false;
+
+    if (this.endereco.length > 3) {
+      this.enderecoValido = true;
+    } else {
+      this.enderecoValido = false;
+    }
+
+    this.habilitaForm();
   }
 
   public atualizaNumero(numero: string): void {
     this.numero = numero;
-    console.log(this.numero);
+
+    this.numeroPrimitivo = false;
+
+    if (this.numero.length > 0) {
+      this.numeroValido = true;
+    } else {
+      this.numeroValido = false;
+    }
+
+    this.habilitaForm();
   }
 
   public atualizaComplemento(complemento: string): void {
     this.complemento = complemento;
-    console.log(this.complemento);
+
+    this.complementoPrimitivo = false;
+
+    if (this.complemento.length > 0) {
+      this.complementoValido = true;
+    } else {
+      this.complementoValido = false;
+    }
+
+    this.habilitaForm();
   }
 
   public atualizaPagamento(pagamento: string): void {
     this.formaPagamento = pagamento;
-    console.log(this.formaPagamento);
+
+    this.pagamentoPrimitivo = false;
+
+    if (this.formaPagamento.length > 0) {
+      this.formaPagamentoValido = true;
+    } else {
+      this.formaPagamentoValido = false;
+    }
+
+    this.habilitaForm();
+  }
+
+  public habilitaForm(): void {
+    if (this.enderecoValido === true && this.numeroValido === true && this.formaPagamentoValido === true) {
+      this.formEstado = '';
+    } else {
+      this.formEstado = 'disabled';
+    }
   }
 }
