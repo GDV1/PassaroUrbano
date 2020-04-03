@@ -20,6 +20,18 @@ export class OrdemCompraComponent implements OnInit {
   }
 
   public confirmarCompra(): void {
-    console.log(this.form);
+
+    const pedido: Pedido = new Pedido(
+      undefined,
+      this.form.value.endereco,
+      this.form.value.numero,
+      this.form.value.complemento,
+      this.form.value.formaPagamento
+    );
+
+    this.ordemCompraService.efetivarCompra(pedido)
+      .subscribe((idPedido: number) => {
+        console.log('Pedido cadastrado com sucesso. ID: ' + idPedido);
+      });
   }
 }

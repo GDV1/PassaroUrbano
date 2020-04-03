@@ -241,6 +241,13 @@
       "complemento": "Quadra 8",
       "formaPagamento": "dinheiro",
       "id": 8
+    },
+    {
+      "endereco": "Rua José da Silva",
+      "numero": "11",
+      "complemento": "Casa A",
+      "formaPagamento": "dinheiro",
+      "id": 9
     }
   ]
 }
