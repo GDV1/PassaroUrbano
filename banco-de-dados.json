@@ -248,6 +248,13 @@
       "complemento": "Casa A",
       "formaPagamento": "dinheiro",
       "id": 9
+    },
+    {
+      "endereco": "Rua ABD",
+      "numero": "15",
+      "complemento": "Casa 2",
+      "formaPagamento": "dinheiro",
+      "id": 10
     }
   ]
 }

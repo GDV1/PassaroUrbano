@@ -11,7 +11,6 @@ export class OrdemCompraSucessoComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }
