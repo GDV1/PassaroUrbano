@@ -255,6 +255,20 @@
       "complemento": "Casa 2",
       "formaPagamento": "dinheiro",
       "id": 10
+    },
+    {
+      "endereco": "Rua Antonio Anchieta",
+      "numero": "10",
+      "complemento": "Casa 2",
+      "formaPagamento": "debito",
+      "id": 11
+    },
+    {
+      "endereco": "Rua José Hermano",
+      "numero": "15",
+      "complemento": "Quadra 85",
+      "formaPagamento": "dinheiro",
+      "id": 12
     }
   ]
 }
