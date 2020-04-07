@@ -3,12 +3,13 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { OfertasService } from '../ofertas.service';
 import { Oferta } from '../shared/oferta.model';
+import { CarrinhoService } from '../carinho.service';
 
 @Component({
   selector: 'app-oferta',
   templateUrl: './oferta.component.html',
   styleUrls: ['./oferta.component.css'],
-  providers: [ OfertasService ]
+  providers: [ OfertasService, CarrinhoService ]
 })
 export class OfertaComponent implements OnInit {
 
@@ -16,7 +17,8 @@ export class OfertaComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private ofertasService: OfertasService
+    private ofertasService: OfertasService,
+    private carrinhoService: CarrinhoService
   ) { }
 
   public parametro;
@@ -28,5 +30,7 @@ export class OfertaComponent implements OnInit {
       this.ofertasService.OfertasPorId(this.parametro)
       .subscribe(dados => this.ofertas = dados);
     });
+
+    console.log(this.carrinhoService.exibirItens());
   }
 }
