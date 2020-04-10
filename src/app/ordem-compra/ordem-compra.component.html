@@ -2,6 +2,7 @@
   <div class="ordem-compra" *ngIf="idPedidoCompra === undefined">
     <form [formGroup]="formulario" novalidate (ngSubmit)="confirmarCompra()">
     
+
       <h5>Sua Compra</h5>
       <hr />
 
@@ -18,15 +19,15 @@
         <div>
           <div class="row">
             <div class="col">
-              <button type="button" class="btn btn-link">-</button>
+              <button type="button" class="btn btn-link" (click)="diminuir(item)">-</button>
               {{ item.quantidade }}
-              <button type="button" class="btn btn-link">+</button>
+              <button type="button" class="btn btn-link" (click)="adicionar(item)">+</button>
             </div>
           </div>
         </div>
 
         <div class="form-group col-sm-3 d-flex justify-content-end">
-          {{ item.quantidade * item.valor | currency: 'BRL': true}}
+          {{ item.quantidade * item.valor | currency: 'BRL' }}
         </div>
       </div>
       
