@@ -18,6 +18,25 @@ export class CarrinhoService {
             1
         );
 
-        console.log(itemCarrinho);
+        // Verifica se o item já existe no vetor de itens do carrinho
+        let itemEncontrado = this.itens.find((item: ItemCarrinho) =>
+            item.id === itemCarrinho.id
+        );
+
+        if (itemEncontrado) {
+            itemEncontrado.quantidade = itemEncontrado.quantidade + 1;
+        } else {
+            this.itens.push(itemCarrinho);
+        }
+    }
+
+    public totalCarrinhoCompras(): number {
+        let total: number = 0;
+
+        this.itens.map((item: ItemCarrinho) => {
+            total = total + (item.valor * item.quantidade);
+        });
+
+        return total;
     }
 }

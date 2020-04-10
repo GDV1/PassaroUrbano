@@ -9,12 +9,12 @@ import { CarrinhoService } from '../carinho.service';
   selector: 'app-oferta',
   templateUrl: './oferta.component.html',
   styleUrls: ['./oferta.component.css'],
-  providers: [ OfertasService, CarrinhoService ]
+  providers: [ OfertasService ]
 })
 export class OfertaComponent implements OnInit {
 
   public ofertas: Oferta;
-
+ 
   constructor(
     private route: ActivatedRoute,
     private ofertasService: OfertasService,
@@ -34,5 +34,6 @@ export class OfertaComponent implements OnInit {
 
   public adicionarAoCarrinho(oferta: Oferta): void {
     this.carrinhoService.incluirItem(oferta);
+    console.log(this.carrinhoService.exibirItens());
   }
 }

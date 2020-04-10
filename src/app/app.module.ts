@@ -4,7 +4,7 @@ import localePtBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 
 import { HttpClientModule } from '@angular/common/http';
-import { /*FormsModule,*/ ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +19,7 @@ import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
 import { DescricaoReduzida } from './util/descricao-reduzida.pipe';
 import { OrdemCompraComponent } from './ordem-compra/ordem-compra.component';
 import { OrdemCompraSucessoComponent } from './ordem-compra-sucesso/ordem-compra-sucesso.component';
+import { CarrinhoService } from './carinho.service';
 
 registerLocaleData(localePtBr);
 
@@ -42,9 +43,11 @@ registerLocaleData(localePtBr);
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule
-    //FormsModule
   ],
-  providers: [ { provide: LOCALE_ID, useValue: 'pt-BR' } ],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'pt-BR' },
+    CarrinhoService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
