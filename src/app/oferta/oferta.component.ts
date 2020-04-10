@@ -30,7 +30,9 @@ export class OfertaComponent implements OnInit {
       this.ofertasService.OfertasPorId(this.parametro)
       .subscribe(dados => this.ofertas = dados);
     });
+  }
 
-    console.log(this.carrinhoService.exibirItens());
+  public adicionarAoCarrinho(oferta: Oferta): void {
+    this.carrinhoService.incluirItem(oferta);
   }
 }
