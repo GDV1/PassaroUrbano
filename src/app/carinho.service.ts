@@ -57,10 +57,14 @@ export class CarrinhoService {
 
         if (encontrado) {
             encontrado.quantidade = encontrado.quantidade - 1;
-        
+
             if (encontrado.quantidade === 0) {
                 this.itens.splice(this.itens.indexOf(encontrado), 1);
             }
         }
+    }
+
+    public limparCarrinho(): void {
+        this.itens = [];
     }
 }
