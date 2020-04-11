@@ -41,10 +41,14 @@ export class OrdemCompraComponent implements OnInit {
       this.formulario.value.formaPagamento
     );
 
-    this.ordemCompraService.efetivarCompra(pedido)
+    if (this.carrinhoService.exibirItens().length === 0) {
+      alert('Você não selecionou nenhum item!');
+    } else {
+      this.ordemCompraService.efetivarCompra(pedido)
       .subscribe((idPedido: number) => {
         this.idPedidoCompra = idPedido;
       });
+    }
   }
 
   public adicionar(item: ItemCarrinho): void {
