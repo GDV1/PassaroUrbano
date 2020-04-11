@@ -269,6 +269,25 @@
       "complemento": "Quadra 85",
       "formaPagamento": "dinheiro",
       "id": 12
+    },
+    {
+      "endereco": "Avenida 24 de Outubro",
+      "numero": "1152",
+      "complemento": null,
+      "formaPagamento": "dinheiro",
+      "itens": [
+        {
+          "id": 1,
+          "img": {
+            "url": "/assets/ofertas/1/img1.jpg"
+          },
+          "titulo": "Super Burger",
+          "descricaoOferta": "Rodízio de Mini-hambúrger com opção de entrada.",
+          "valor": 29.9,
+          "quantidade": 3
+        }
+      ],
+      "id": 13
     }
   ]
 }
