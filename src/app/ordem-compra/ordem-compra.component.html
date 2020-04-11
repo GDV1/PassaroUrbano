@@ -1,41 +1,49 @@
 <div class="container">
   <div class="ordem-compra" *ngIf="idPedidoCompra === undefined">
     <form [formGroup]="formulario" novalidate (ngSubmit)="confirmarCompra()">
-    
+
 
       <h5>Sua Compra</h5>
       <hr />
 
-      <div *ngFor="let item of itensCarrinho" class="form-row">
-        <div class="form-group col-sm-1">
-          <img [src]="item.img.url" class="img-fluid">
-        </div>
-        <div class="form-group col-sm-6">
-          {{ item.titulo }}
-          <br />
-          {{ item.descricao_oferta }}
-        </div>
+      <div *ngIf="carrinhoService.exibirItens().length; else carrinhoVazio">
+        <div *ngFor="let item of itensCarrinho" class="form-row">
+          <div class="form-group col-sm-1">
+            <img [src]="item.img.url" class="img-fluid">
+          </div>
+          <div class="form-group col-sm-6">
+            {{ item.titulo }}
+            <br />
+            {{ item.descricao_oferta }}
+          </div>
 
-        <div>
-          <div class="row">
-            <div class="col">
-              <button type="button" class="btn btn-link" (click)="diminuir(item)">-</button>
-              {{ item.quantidade }}
-              <button type="button" class="btn btn-link" (click)="adicionar(item)">+</button>
+          <div>
+            <div class="row">
+              <div class="col">
+                <button type="button" class="btn btn-link" (click)="diminuir(item)">-</button>
+                {{ item.quantidade }}
+                <button type="button" class="btn btn-link" (click)="adicionar(item)">+</button>
+              </div>
             </div>
+          </div>
+
+          <div class="form-group col-sm-3 d-flex justify-content-end">
+            {{ item.quantidade * item.valor | currency: 'BRL' }}
           </div>
         </div>
 
-        <div class="form-group col-sm-3 d-flex justify-content-end">
-          {{ item.quantidade * item.valor | currency: 'BRL' }}
+        <div class="form-row">
+          <div class="form-group col d-flex justify-content-end">
+            <h4>Total do pedido: {{ carrinhoService.totalCarrinhoCompras() | currency: 'BRL'}}</h4>
+          </div>
         </div>
       </div>
-      
-      <div class="form-row">
-        <div class="form-group col d-flex justify-content-end">
-          <h4>Total do pedido: {{ carrinhoService.totalCarrinhoCompras() | currency: 'BRL'}}</h4>
+
+      <ng-template #carrinhoVazio>
+        <div class="form-row d-flex justify-content-center">
+          Seu carrinho está vazio! Não perca tempo, aproveite as ofertas.
         </div>
-      </div>
+      </ng-template>
       <br />
 
       <h5>Dados de entrega</h5>
@@ -44,34 +52,23 @@
       <div class="form-row">
 
         <div class="form-group col-md-6">
-          <input 
-            type="text" 
-            class="form-control" 
-            placeholder="Endereço" 
-            formControlName="endereco" 
-          >
-          <small *ngIf="formulario.get('endereco').valid && formulario.get('endereco').touched" class="form-text text-success">Ok</small>
-          <small *ngIf="formulario.get('endereco').invalid && formulario.get('endereco').touched" class="form-text text-danger">Endereço inválido</small>
+          <input type="text" class="form-control" placeholder="Endereço" formControlName="endereco">
+          <small *ngIf="formulario.get('endereco').valid && formulario.get('endereco').touched"
+            class="form-text text-success">Ok</small>
+          <small *ngIf="formulario.get('endereco').invalid && formulario.get('endereco').touched"
+            class="form-text text-danger">Endereço inválido</small>
         </div>
 
         <div class="form-group col-md-2">
-          <input 
-            type="text" 
-            class="form-control" 
-            placeholder="Número" 
-            formControlName="numero"
-          >
-          <small *ngIf="formulario.get('numero').valid && formulario.get('numero').touched" class="form-text text-success">Ok</small>
-          <small *ngIf="formulario.get('numero').invalid && formulario.get('numero').touched" class="form-text text-danger">Número inválido</small>
+          <input type="text" class="form-control" placeholder="Número" formControlName="numero">
+          <small *ngIf="formulario.get('numero').valid && formulario.get('numero').touched"
+            class="form-text text-success">Ok</small>
+          <small *ngIf="formulario.get('numero').invalid && formulario.get('numero').touched"
+            class="form-text text-danger">Número inválido</small>
         </div>
 
         <div class="form-group col-md-4">
-          <input 
-            type="text" 
-            class="form-control" 
-            placeholder="Complemento" 
-            formControlName="complemento"
-          >
+          <input type="text" class="form-control" placeholder="Complemento" formControlName="complemento">
         </div>
 
       </div>
@@ -81,27 +78,22 @@
       <hr />
 
       <div class="form-row">
-          
+
         <div class="form-group col-md-3">
-          <select 
-            class="form-control"
-            formControlName="formaPagamento"
-          >
+          <select class="form-control" formControlName="formaPagamento">
             <option value="">Selecione uma opção</option>
             <option value="dinheiro">Dinheiro</option>
             <option value="debito">Débito</option>
           </select>
-          <small *ngIf="formulario.get('formaPagamento').valid && formulario.get('formaPagamento').touched" class="form-text text-success">Ok</small>
-          <small *ngIf="formulario.get('formaPagamento').invalid && formulario.get('formaPagamento').touched" class="form-text text-danger">Forma de pagamento inválida</small>
+          <small *ngIf="formulario.get('formaPagamento').valid && formulario.get('formaPagamento').touched"
+            class="form-text text-success">Ok</small>
+          <small *ngIf="formulario.get('formaPagamento').invalid && formulario.get('formaPagamento').touched"
+            class="form-text text-danger">Forma de pagamento inválida</small>
         </div>
       </div>
 
       <hr />
-      <button 
-        type="submit" 
-        class="btn btn-primary btn-lg"
-        [disabled]="!formulario.valid"
-      >Cofirmar compra</button>
+      <button type="submit" class="btn btn-primary btn-lg" [disabled]="!formulario.valid">Cofirmar compra</button>
     </form>
   </div>
   <div class="ordem-compra" *ngIf="idPedidoCompra !== undefined">
