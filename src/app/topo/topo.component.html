@@ -1,33 +1,27 @@
-<div>
-  <nav class="navbar navbar-light bg-faded">
-    <div class="container">
-      <div class="row">
-        <div class="col-4">
-          <a class="navbar-brand" routerLink=""><img src="/assets/logo.png" /></a>
-        </div>
-        <div class="col-6">
-          <input 
-            type="text" 
-            class="form-control" 
-            placeholder="Pesquise por ofertas..."
-            #termoBusca
-            (keyup)="pesquisa(termoBusca.value)"
-            />
-            <ul class="list-group" style="position: absolute; z-index: 999;">
-              <li 
-              class="list-group-item" 
-              *ngFor="let oferta of ofertas | async"> 
-              <a [routerLink]="['/oferta', oferta.id]" (click)="limpaPesquisa()">{{ oferta.titulo | descricaoReduzida:15 }}</a>
-            </li>
-            </ul>
-        </div>
-        <div class="col-2">
-          <a routerLink="ordem-compra"><img src="/assets/carrinho.png"/></a>
-        </div>
+<div class="flex-column flex-md-row bd-navbar">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="p-0 m-0">
+        <a class="navbar-brand" routerLink=""><img src="/assets/logo.png" alt="Pássaro Urbano"></a>
+      </div>
+
+      <div class="col-sm-6 p-0 m-auto">
+        <input type="text" class="form-control" placeholder="Pesquise por ofertas...">
+      </div>
+
+      <div class="p-0 m-0">
+        <a routerLink="ordem-compra"><img src="/assets/carrinho.png" alt="Carrinho de Compras"></a>
+      </div>
+
+      <div class="p-0 m-auto">
+        <a href="#login">Login</a>
       </div>
     </div>
-  </nav>
+  </div>
+</div>
 
+
+<nav class="nav-fluid">
   <div class="menu">
     <div class="container">
       <ul class="nav">
@@ -40,8 +34,54 @@
       </ul>
     </div>
   </div>
-</div>
+</nav>
 
-<div class="banner">
+<div class="banner m-0">
   <img src="/assets/banners/img_1.jpg" />
 </div>
+
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
+
+
+<!-- <div>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col col-3">
+        <a class="navbar-brand" routerLink=""><img src="/assets/logo.png" alt="Pássaro Urbano" /></a>
+      </div>
+      <div class="col col-5">
+        <input type="text" class="form-control" placeholder="Pesquise por ofertas..." #termoBusca
+          (keyup)="pesquisa(termoBusca.value)" />
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let oferta of ofertas | async">
+            <a [routerLink]="['/oferta', oferta.id]"
+              (click)="limpaPesquisa()">{{ oferta.titulo }}</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col col-4">
+        <a routerLink="ordem-compra"><img src="/assets/carrinho.png" alt="Carrinho de Compras"></a>
+      </div>
+    </div>
+  </div>
+-->
+
+<!-- <div class="banner">
+  <img src="/assets/banners/img_1.jpg" />
+</div> -->
