@@ -1,7 +1,9 @@
-import { ItemCarrinho } from '../app/shared/item-carrinho.model';
+//Model
 import { Oferta } from './shared/oferta.model';
+import { ItemCarrinho } from '../app/shared/item-carrinho.model';
 
 export class CarrinhoService {
+    
     public itens: ItemCarrinho[] = [];
 
     public exibirItens(): ItemCarrinho[] {

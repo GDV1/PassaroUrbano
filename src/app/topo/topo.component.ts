@@ -1,7 +1,14 @@
+// Default imports
 import { Component, OnInit } from '@angular/core';
+
+// Services
 import { OfertasService } from '../ofertas.service';
-import { Observable } from 'rxjs/Observable';
+
+// Model
 import { Oferta } from '../shared/oferta.model';
+
+// RxJS
+import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs';
 import '../util/rxjs-extensions';
 

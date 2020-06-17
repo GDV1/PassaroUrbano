@@ -1,24 +1,33 @@
+// Default imports
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule, LOCALE_ID } from '@angular/core';
+
+// Imports for local currency formatting
 import localePtBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 
-import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
-
-import { AppRoutingModule } from './app-routing.module';
+// Components
 import { AppComponent } from './app.component';
 import { TopoComponent } from './topo/topo.component';
 import { HomeComponent } from './home/home.component';
 import { RodapeComponent } from './rodape/rodape.component';
-import { RestaurantesComponent } from './restaurantes/restaurantes.component';
-import { DiversaoComponent } from './diversao/diversao.component';
 import { OfertaComponent } from './oferta/oferta.component';
+import { DiversaoComponent } from './diversao/diversao.component';
 import { ComoUsarComponent } from './oferta/como-usar/como-usar.component';
 import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
-import { DescricaoReduzida } from './util/descricao-reduzida.pipe';
 import { OrdemCompraComponent } from './ordem-compra/ordem-compra.component';
+import { RestaurantesComponent } from './restaurantes/restaurantes.component';
 import { OrdemCompraSucessoComponent } from './ordem-compra-sucesso/ordem-compra-sucesso.component';
+
+// Modules
+import { AppRoutingModule } from './app-routing.module';
+
+// Pipes
+import { DescricaoReduzida } from './util/descricao-reduzida.pipe';
+
+// Services
 import { CarrinhoService } from './carinho.service';
 
 registerLocaleData(localePtBr);

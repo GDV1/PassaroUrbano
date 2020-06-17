@@ -1,3 +1,4 @@
+// Default imports
 import { PipeTransform, Pipe } from '@angular/core';
 
 @Pipe({

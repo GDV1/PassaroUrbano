@@ -1,8 +1,13 @@
+// Default imports
 import { Component, OnInit } from '@angular/core';
-import { OrdemCompraService } from '../ordem-compra.service';
-import { Pedido } from '../shared/pedido.model';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+
+// Services
 import { CarrinhoService } from '../carinho.service';
+import { OrdemCompraService } from '../ordem-compra.service';
+
+// Models
+import { Pedido } from '../shared/pedido.model';
 import { ItemCarrinho } from '../shared/item-carrinho.model';
 
 @Component({

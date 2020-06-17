@@ -1,6 +1,11 @@
+// Default imports
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+
+// Service
 import { OfertasService } from 'src/app/ofertas.service';
+
+// Model
 import { detalhesOferta } from 'src/app/shared/detalhesOferta.model';
 
 @Component({

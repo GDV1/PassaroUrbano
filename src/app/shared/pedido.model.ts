@@ -1,3 +1,4 @@
+// Model
 import { ItemCarrinho } from './item-carrinho.model';
 
 export class Pedido {

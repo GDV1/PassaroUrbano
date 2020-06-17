@@ -1,15 +1,17 @@
+// Default imports
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+// Components
 import { HomeComponent } from './home/home.component';
-import { RestaurantesComponent } from './restaurantes/restaurantes.component';
-import { DiversaoComponent } from './diversao/diversao.component';
 import { OfertaComponent } from './oferta/oferta.component';
+import { DiversaoComponent } from './diversao/diversao.component';
 import { ComoUsarComponent } from './oferta/como-usar/como-usar.component';
 import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
 import { OrdemCompraComponent } from './ordem-compra/ordem-compra.component';
+import { RestaurantesComponent } from './restaurantes/restaurantes.component';
 
-
+// Route Map
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'restaurantes', component: RestaurantesComponent },

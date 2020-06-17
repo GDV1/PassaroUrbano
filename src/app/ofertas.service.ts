@@ -1,8 +1,12 @@
+// Default imports
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
+// Models
 import { Oferta } from './shared/oferta.model';
 import { detalhesOferta } from './shared/detalhesOferta.model';
 
+// RxJS
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/retry';
@@ -11,6 +15,7 @@ import 'rxjs/add/operator/retry';
 @Injectable()
 export class OfertasService {
 
+    // Base URL
     private readonly urlBase = 'http://localhost:3000/';
 
     constructor(private http: HttpClient) {}

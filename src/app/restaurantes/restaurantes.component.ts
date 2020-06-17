@@ -1,6 +1,10 @@
+// Default imports
 import { Component, OnInit } from '@angular/core';
 
+// Model
 import { Oferta } from '../shared/oferta.model';
+
+// Service
 import { OfertasService } from '../ofertas.service';
 
 @Component({
