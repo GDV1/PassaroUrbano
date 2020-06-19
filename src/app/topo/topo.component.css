@@ -1,0 +1,15 @@
+.menu {
+    background-color: #006ACB;
+}
+
+.nav-link {
+    color: #C1E4FF;
+}
+
+.nav-link :hover, .active  {
+    color: #FFF;
+}
+
+.nav-item {
+    display: block;
+}
