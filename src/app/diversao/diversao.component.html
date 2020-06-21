@@ -7,34 +7,18 @@
 
   <hr />
 
-  <div *ngFor='let oferta of ofertas'>
-    <div class="row">
-      <div class="col-md-4">
-        <img [src]="oferta.imagens[0].url" />
-      </div>
-
-      <div class="col-md-8">
-        <div class="row">
-          <h4>{{ oferta.titulo }}</h4>
-        </div>
-
-        <div class="row">
-          <h5>{{ oferta.descricao_oferta }}</h5>
-        </div>
-
-        <div class="row">
+  <div class="row">
+    <div class="col-sm-4" *ngFor="let oferta of ofertas">
+      <div class="card text-center">
+        <img class="card-img-top" [src]="oferta.imagens[0].url">
+        <div class="card-body">
+          <h4 class="card-title">{{ oferta.titulo }}</h4>
+          <h5 class="card-text">{{ oferta.descricao_oferta }}</h5>
           <p>Anunciado por: <b>{{ oferta.anunciante }}</b></p>
-        </div>
-
-        <div class="row">
-          <p>{{ oferta.valor | currency: 'BRL' }}</p>
-        </div>
-
-        <div class="row">
-          <button [routerLink]="['/oferta', oferta.id]" class="btn btn-outline-success">Ver oferta</button>
+          <p class="preco">{{ oferta.valor | currency: 'BRL' }}</p>
+          <a [routerLink]="['/oferta', oferta.id ]" class="btn btn-outline-success btn-block">Ver oferta</a>
         </div>
       </div>
     </div>
-    <hr />
   </div>
 </div>
