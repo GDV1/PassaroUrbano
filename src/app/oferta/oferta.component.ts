@@ -30,9 +30,11 @@ export class OfertaComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe((parametros: any) => {
       this.parametro = parametros.id;
-
+      
       this.ofertasService.OfertasPorId(this.parametro)
-      .subscribe(dados => this.ofertas = dados);
+      .subscribe(dados => {
+        this.ofertas = dados;
+      });
     });
   }
 

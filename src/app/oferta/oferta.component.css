@@ -2,13 +2,12 @@ h1 {
     color: #555
 }
 
-.oferta {
-    margin-top: 25px
+h4 {
+    margin: 20px 0 20px 0;
 }
 
-.oferta img {
-    width: 372px;
-    height: 240px;
+.oferta {
+    margin-top: 25px
 }
 
 .thumbnails {
@@ -21,3 +20,66 @@ h1 {
     margin-right: 10px;
     margin-bottom: 10px;
 }
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    height: 100vh;
+}
+
+.btn {
+    width: 200px;
+    height: 55px;
+    background: #ff8901;
+    color: #FFF;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .25s;
+    position: relative;
+    margin-left: 180px;
+}
+
+.btn img {
+    position: absolute;
+    top: 48.5%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    transition: .25s;
+    width: 30px;
+} 
+
+.btn span {
+    font-size: 20px;
+    position: absolute;
+    text-transform: uppercase;
+    margin-left: 30px;
+    transition: .25s;
+    clip-path: circle(200px at 125px 27.5px);
+}
+
+.btn:hover {
+    cursor: pointer;
+    opacity: .8;
+}
+
+.btn:hover img {
+    left: 50%;
+}
+
+.btn:hover span {
+    clip-path: circle(0px at 125px 27.5px);
+}
+
+
+
+
+
+
+
+
+
+
