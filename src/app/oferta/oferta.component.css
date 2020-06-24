@@ -40,7 +40,7 @@ body {
     justify-content: center;
     transition: .25s;
     position: relative;
-    margin-left: 180px;
+    margin: auto;
 }
 
 .btn img {
@@ -74,7 +74,10 @@ body {
     clip-path: circle(0px at 125px 27.5px);
 }
 
-
+#nav-tabs {
+    margin-top: 15px; 
+    margin-bottom: 150px;
+}
 
 
 
