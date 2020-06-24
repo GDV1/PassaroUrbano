@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 // Model
-import { Pedido } from './shared/pedido.model';
+import { Pedido } from '../shared/pedido.model';
 
 // RxJS
 import { Observable } from 'rxjs/Observable';

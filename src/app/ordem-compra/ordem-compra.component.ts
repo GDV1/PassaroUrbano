@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 // Services
-import { CarrinhoService } from '../carinho.service';
-import { OrdemCompraService } from '../ordem-compra.service';
+import { CarrinhoService } from '../services/carinho.service';
+import { OrdemCompraService } from '../services/ordem-compra.service';
 
 // Models
 import { Pedido } from '../shared/pedido.model';

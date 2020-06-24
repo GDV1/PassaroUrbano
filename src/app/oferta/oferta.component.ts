@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 // Services
-import { OfertasService } from '../ofertas.service';
-import { CarrinhoService } from '../carinho.service';
+import { OfertasService } from '../services/ofertas.service';
+import { CarrinhoService } from '../services/carinho.service';
 
 // Model
 import { Oferta } from '../shared/oferta.model';

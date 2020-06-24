@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 
 // Services
-import { OfertasService } from '../ofertas.service';
+import { OfertasService } from '../services/ofertas.service';
 
 // Model
 import { Oferta } from '../shared/oferta.model';

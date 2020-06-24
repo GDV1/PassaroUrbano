@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 // Models
-import { Oferta } from './shared/oferta.model';
-import { detalhesOferta } from './shared/detalhesOferta.model';
+import { Oferta } from '../shared/oferta.model';
+import { detalhesOferta } from '../shared/detalhesOferta.model';
 
 // RxJS
 import { Observable } from 'rxjs/Observable';

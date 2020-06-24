@@ -29,7 +29,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { DescricaoReduzida } from './util/descricao-reduzida.pipe';
 
 // Services
-import { CarrinhoService } from './carinho.service';
+import { CarrinhoService } from './services/carinho.service';
 
 registerLocaleData(localePtBr);
 

@@ -1,6 +1,6 @@
 //Model
-import { Oferta } from './shared/oferta.model';
-import { ItemCarrinho } from '../app/shared/item-carrinho.model';
+import { Oferta } from '../shared/oferta.model';
+import { ItemCarrinho } from '../shared/item-carrinho.model';
 
 export class CarrinhoService {
     

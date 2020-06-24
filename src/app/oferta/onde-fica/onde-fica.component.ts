@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 // Service
-import { OfertasService } from 'src/app/ofertas.service';
+import { OfertasService } from 'src/app/services/ofertas.service';
 
 // Model
 import { detalhesOferta } from 'src/app/shared/detalhesOferta.model';

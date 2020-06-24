@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { Oferta } from '../shared/oferta.model';
 
 // Service
-import { OfertasService } from '../ofertas.service';
+import { OfertasService } from '../services/ofertas.service';
 
 @Component({
   selector: 'app-restaurantes',
