@@ -2,7 +2,11 @@ span {
     color: #fff;
 }
 
-.row {
+footer {
     background: #0057A6;
     padding: 10px
+}
+
+p, a {
+    color: #fff;
 }
