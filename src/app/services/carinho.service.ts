@@ -1,7 +1,9 @@
 //Model
 import { Oferta } from '../shared/oferta.model';
 import { ItemCarrinho } from '../shared/item-carrinho.model';
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class CarrinhoService {
     
     public itens: ItemCarrinho[] = [];
