@@ -24,12 +24,17 @@ import { OrdemCompraSucessoComponent } from './ordem-compra-sucesso/ordem-compra
 
 // Modules
 import { AppRoutingModule } from './app-routing.module';
+import { AngularFireModule } from '@angular/fire';
 
 // Pipes
 import { DescricaoReduzida } from './util/descricao-reduzida.pipe';
 
 // Services
 import { CarrinhoService } from './services/carinho.service';
+
+// Environment
+import { environment } from 'src/environments/environment';
+
 
 registerLocaleData(localePtBr);
 
@@ -53,7 +58,11 @@ registerLocaleData(localePtBr);
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+
+    /* Angular Fire - For Firebase */
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-BR' },
