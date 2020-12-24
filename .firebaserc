@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "passaro-urbano-1690c": {
+      "hosting": {
+        "PassaroUrbano": [
+          "passaro-urbano-1690c"
+        ]
+      }
+    }
+  }
+}
