@@ -31,7 +31,7 @@
           </div>
         </div>
 
-        <div (click)="adicionarAoCarrinho(oferta)" class="btn">
+        <div (click)="adicionarAoCarrinho(oferta)" [routerLink]="['/ordem-compra']" class="btn">
           <img src="../../assets/cart-white.svg">
           <span>Comprar</span>
         </div>
