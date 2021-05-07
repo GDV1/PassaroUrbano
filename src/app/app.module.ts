@@ -24,7 +24,6 @@ import { OrdemCompraSucessoComponent } from './ordem-compra-sucesso/ordem-compra
 
 // Modules
 import { AppRoutingModule } from './app-routing.module';
-import { AngularFireModule } from '@angular/fire';
 
 // Pipes
 import { DescricaoReduzida } from './util/descricao-reduzida.pipe';
@@ -59,10 +58,6 @@ registerLocaleData(localePtBr);
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-
-    /* Angular Fire - For Firebase */
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-BR' },
