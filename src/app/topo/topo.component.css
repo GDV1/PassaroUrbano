@@ -1,4 +1,34 @@
-.menu {
+.container{
+    display: grid;
+    grid-template-columns: 0.7fr 1.5fr 1fr;
+}
+
+.logo {
+    margin: 2rem;
+}
+
+.input-search {
+    margin-top: 3rem;
+}
+
+.search {
+    width: 85%;
+    border: 1px solid #616362;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 4rem;
+}
+
+.links > .linksMenu{
+    text-decoration: none;
+}
+
+/*.menu {
     background-color: #006ACB;
 }
 
@@ -18,3 +48,4 @@
     width: 35px;
     height: 35px;
 }
+*/
