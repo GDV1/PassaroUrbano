@@ -23,6 +23,8 @@
     "intl": "^1.2.5",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.0",
+    "primeicons": "^4.1.0",
+    "primeng": "^12.2.0",
     "rxjs": "~6.6.7",
     "rxjs-compat": "^6.6.0",
     "tslib": "^2.0.0",
