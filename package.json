@@ -4,6 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:app": "concurrently \"npm run start\" \"npm run start:bd\"",
+    "start:bd": "json-server --watch ./banco-de-dados.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
