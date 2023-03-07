@@ -1,1 +1,0 @@
-{"ast":null,"code":"export class Pedido {\n  constructor(id, endereco, numero, complemento, formaPagamento, itens) {\n    this.id = id;\n    this.endereco = endereco;\n    this.numero = numero;\n    this.complemento = complemento;\n    this.formaPagamento = formaPagamento;\n    this.itens = itens;\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}
